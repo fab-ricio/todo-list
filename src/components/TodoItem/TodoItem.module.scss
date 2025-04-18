@@ -1,0 +1,115 @@
+@import '../../styles/variables';
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  background: $white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &.completed {
+    opacity: 0.7;
+    .todoText {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.checkboxContainer {
+  margin-right: 1.2rem;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid $primary-color;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba($primary-color, 0.1);
+  }
+}
+
+.checkIcon {
+  color: $primary-color;
+  font-size: 1.2rem;
+}
+
+.todoContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoText {
+  font-size: 1.1rem;
+  color: $text-color;
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 1rem;
+}
+
+.editButton, .deleteButton {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: $gray-600;
+  }
+
+  &:hover {
+    background: rgba($gray-200, 0.5);
+  }
+}
+
+.editForm {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+
+.editInput {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid $gray-300;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.saveButton {
+  background: $primary-color;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
